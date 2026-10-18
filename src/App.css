@@ -2,15 +2,15 @@
 @import "tailwindcss";
 
 @theme {
-	--color-fondo: #f2f6f5;
+	--color-fondo: #f4f7f5;
 	--color-superficie: #ffffff;
-	--color-superficie-elevada: #e7efed;
-	--color-borde: #d0ddda;
-	--color-texto: #203330;
-	--color-texto-suave: #647772;
-	--color-acento: #23817a;
-	--color-acento-fuerte: #1b6964;
-	--color-peligro: #bd4d59;
+	--color-superficie-elevada: #e9f0ec;
+	--color-borde: #d5e1da;
+	--color-texto: #20352d;
+	--color-texto-suave: #667a70;
+	--color-acento: #347d64;
+	--color-acento-fuerte: #28664f;
+	--color-peligro: #b94e5a;
 	--font-sans: 'Manrope', sans-serif;
 }
 
@@ -24,15 +24,15 @@
 }
 
 :root[data-tema="oscuro"] {
-	--color-fondo: #101923;
-	--color-superficie: #172536;
-	--color-superficie-elevada: #1e3044;
-	--color-borde: #2d435b;
-	--color-texto: #e7eef5;
-	--color-texto-suave: #9eb1c3;
-	--color-acento: #63c5d8;
-	--color-acento-fuerte: #2f9caf;
-	--color-peligro: #dc7180;
+	--color-fondo: #121c18;
+	--color-superficie: #1a2822;
+	--color-superficie-elevada: #24372e;
+	--color-borde: #394e43;
+	--color-texto: #e8f0eb;
+	--color-texto-suave: #a3b7aa;
+	--color-acento: #79c8a5;
+	--color-acento-fuerte: #58aa85;
+	--color-peligro: #df7e86;
 	color-scheme: dark;
 }
 
@@ -46,8 +46,8 @@ body {
 	margin: 0;
 	color: var(--color-texto);
 	background:
-		radial-gradient(circle at 12% 0%, color-mix(in srgb, var(--color-acento) 12%, transparent), transparent 30rem),
-		linear-gradient(145deg, var(--color-fondo) 0%, var(--color-superficie-elevada) 100%);
+		radial-gradient(circle at 10% 0%, color-mix(in srgb, var(--color-acento) 10%, transparent), transparent 32rem),
+		linear-gradient(145deg, var(--color-fondo) 0%, color-mix(in srgb, var(--color-fondo) 78%, var(--color-superficie-elevada)) 100%);
 }
 
 button,
@@ -57,4 +57,16 @@ input {
 
 button {
 	cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+	outline: 3px solid color-mix(in srgb, var(--color-acento) 60%, transparent);
+	outline-offset: 3px;
+}
+
+::selection {
+	color: var(--color-superficie);
+	background: var(--color-acento-fuerte);
 }
