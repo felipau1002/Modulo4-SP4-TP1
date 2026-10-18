@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react"
-import useToggle from "../../hooks/useToggle"
-import useInput from '../../hooks/useInput'
+import useToggle from "../../hooks/useToggle.js"
+import useInput from '../../hooks/useInput.js'
 import NavBar from '../layout/NavBar.jsx'
-import SeccionTarjetas from '../SeccionTarjetas'
-import PanelWishlist from '../PanelWishlist'
+import SeccionTarjetas from '../SeccionTarjetas.jsx'
+import PanelWishlist from '../PanelWishlist.jsx'
 
 import axios from "axios"
 
   
   
-export const Tienda = () => {
+export const Catalogo = () => {
 
   const [personajes, setPersonajes] = useState([])
   const [cargando, setCargando] = useState(false)
@@ -20,7 +20,8 @@ export const Tienda = () => {
 
   const { busqueda, setBusqueda, filtrado } = useInput({ productos: personajes })
   const { isOn, toggle } = useToggle()
-
+  console.log("Variable VITE_URL:", import.meta.env.VITE_URL);
+  console.log("Estado pagina:", pagina);
 
   const fetchData = async () => {
     setCargando(true)
@@ -43,7 +44,6 @@ export const Tienda = () => {
     fetchData()
   }, [pagina])
   
-
 
 
   document.title = `MiApp`

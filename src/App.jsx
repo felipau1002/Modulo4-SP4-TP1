@@ -1,5 +1,5 @@
 import './App.css'
-import { Tienda } from './components/views/Tienda'
+import { Catalogo } from './components/views/Catalogo'
 
 function App() {
 
@@ -7,7 +7,7 @@ function App() {
   return(
     <>
 
-      <Tienda />
+      <Catalogo />
 
     </>
   )
